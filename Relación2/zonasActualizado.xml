@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?><zonas>
+<TITULO>DATOS DE LA TABLA ZONAS</TITULO>
+<zona cod_zona="80">
+  <nombre>Madrid-CENTRO</nombre>
+  <director>Pedro Martin</director>
+<subdirector>Pepito</subdirector></zona>
+<zona cod_zona="20">
+  <nombre>Extremadura-Galicia</nombre>
+  <director>Alicia Perez</director>
+<subdirector>Fregonudo</subdirector></zona>
+<zona cod_zona="30">
+  <nombre>Levante-Catalunna</nombre>
+  <director>Carlos Grau</director>
+<subdirector>Peter</subdirector></zona>
+<zona cod_zona="50">
+  <nombre>Andalucia</nombre>
+  <director>Rocio Gil</director>
+<subdirector>Fulgencio</subdirector></zona>
+</zonas>
