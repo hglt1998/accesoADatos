@@ -1,16 +1,15 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<universidad>
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?><universidad>
   <departamento telefono="112233" tipo="A">
   <codigo>IFC1</codigo>
    <nombre>Informática</nombre>
    <empleado salario="2000">
       <puesto>Asociado</puesto>
-      <nombre>Juan Parra</nombre>
-   </empleado>
+      <nombre>Juan</nombre>
+   <apellido>Parra</apellido></empleado>
    <empleado salario="2300">
       <puesto>Profesor</puesto>
-      <nombre>Alicia Martín</nombre>
-   </empleado>
+      <nombre>Alicia</nombre>
+   <apellido>Martín</apellido></empleado>
   </departamento>
 
   <departamento telefono="990033" tipo="A">
@@ -18,20 +17,20 @@
    <nombre>Matemáticas</nombre>
    <empleado salario="1900">
       <puesto>Técnico</puesto>
-      <nombre>Juan Parra</nombre>
-   </empleado>
+      <nombre>Juan</nombre>
+   <apellido>Parra</apellido></empleado>
    <empleado salario="2100">
       <puesto>Profesor</puesto>
-      <nombre>Mª Jesús Ramos</nombre>
-   </empleado>
+      <nombre>Mª Jesús</nombre>
+   <apellido>Ramos</apellido></empleado>
 	   <empleado salario="2300">
       <puesto>Profesor</puesto>
-      <nombre>Pedro Paniagua</nombre>
-   </empleado>
+      <nombre>Pedro</nombre>
+   <apellido>Paniagua</apellido></empleado>
    <empleado salario="2500">
       <puesto>Tutor</puesto>
-      <nombre>Antonia González</nombre>
-   </empleado>
+      <nombre>Antonia</nombre>
+   <apellido>González</apellido></empleado>
   </departamento>
   
   <departamento telefono="880833" tipo="B">
@@ -39,13 +38,12 @@
    <nombre>Análisis</nombre>
    <empleado salario="1900">
       <puesto>Asociado</puesto>
-      <nombre>Laura Ruiz</nombre>
-   </empleado>
+      <nombre>Laura</nombre>
+   <apellido>Ruiz</apellido></empleado>
    <empleado salario="2200">
       <puesto>Asociado</puesto>
-      <nombre>Mario García</nombre>
-   </empleado>
+      <nombre>Mario</nombre>
+   <apellido>García</apellido></empleado>
   </departamento>
 
-</universidad >
-
+</universidad>

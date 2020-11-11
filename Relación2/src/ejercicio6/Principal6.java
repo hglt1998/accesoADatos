@@ -1,8 +1,16 @@
 package ejercicio6;
 
 import java.io.IOException;
+
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Result;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -24,6 +32,12 @@ public class Principal6 {
 			//Modificación del árbol
 			modificarArbol(arbol);
 			
+			//Fichero de salida
+			Source source = new DOMSource(arbol);
+			Result result = new StreamResult("nuevoUniversidad.xml");
+			Transformer transformer = TransformerFactory.newInstance().newTransformer();
+			
+			transformer.transform(source, result);
 			
 			
 		} catch (Exception e) {
@@ -40,10 +54,9 @@ public class Principal6 {
 	}
 	
 	private static void modificarArbol(Document arbol) {
-		Element elementoRaiz, empleadoActual, elementoNombre;
-		NodeList listaEmpleados, nombreEmpleado;
+		Element elementoRaiz, empleadoActual, elementoNombre, elementoApellido;
+		NodeList listaEmpleados;
 		String nombreCompleto, nombre, apellido;
-		String[] arrayNombreCompleto;
 		
 		elementoRaiz = (Element) arbol.getFirstChild();
 		listaEmpleados = elementoRaiz.getElementsByTagName(ETIQUETA_EMPLEADO);
@@ -51,19 +64,23 @@ public class Principal6 {
 		for (int i = 0; i < listaEmpleados.getLength(); i++) {
 			empleadoActual = (Element) listaEmpleados.item(i);
 			
-			nombreEmpleado = empleadoActual.getElementsByTagName(ETIQUETA_NOMBRE);
-			nombreCompleto = nombreEmpleado.item(0).getNodeValue();
+			nombreCompleto = empleadoActual.getElementsByTagName(ETIQUETA_NOMBRE).item(0).getTextContent();
 			
-			arrayNombreCompleto = nombreCompleto.split(SEPARADOR_ESPACIO);
-			apellido = arrayNombreCompleto[arrayNombreCompleto.length];
-			nombre = nombreCompleto.substring(0, nombreCompleto.indexOf(apellido.charAt(0)));
+			apellido = nombreCompleto.substring(nombreCompleto.lastIndexOf(SEPARADOR_ESPACIO) + 1, nombreCompleto.length());
+			nombre = nombreCompleto.substring(0, nombreCompleto.lastIndexOf(SEPARADOR_ESPACIO));
 			
 			elementoNombre = (Element) empleadoActual.getElementsByTagName(ETIQUETA_NOMBRE).item(0);
 			
 			empleadoActual.removeChild(elementoNombre);
 			
-			empleadoActual.setAttribute(ETIQUETA_NOMBRE, nombre);
-			empleadoActual.setAttribute(ETIQUETA_APELLIDO, apellido);
+			elementoApellido = arbol.createElement(ETIQUETA_APELLIDO);
+			elementoApellido.setTextContent(apellido);
+			elementoNombre = arbol.createElement(ETIQUETA_NOMBRE);
+			elementoNombre.setTextContent(nombre);
+			
+			empleadoActual.appendChild(elementoNombre);
+			
+			empleadoActual.appendChild(elementoApellido);
 			
 		}
 		
