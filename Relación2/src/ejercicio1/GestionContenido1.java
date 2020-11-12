@@ -34,27 +34,21 @@ public class GestionContenido1 extends DefaultHandler
 			edad=Integer.parseInt(cadena);
 			break;
 			
-		}
-		
+		}		
 	}
 
 	@Override
 	public void endDocument() throws SAXException {
-		
 
 	}
 
 	public String getNombreDeEdadMayor() {
 		return nombreDeEdadMayor;
 	}
-
 	
-
 	public int getEdadMayor() {
 		return edadMayor;
 	}
-
-	
 
 	@Override
 	public void endElement(String uri, String localName, String qName) throws SAXException {
