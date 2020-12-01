@@ -12,7 +12,7 @@ import org.xml.sax.XMLReader;
 public class Principal9 {
 
 	private static final String FICHERO_ORIGEN = "universidadEj9.xml";
-	private static final String FICHERO_DESTINO = "universidad.txt";
+//	private static final String FICHERO_DESTINO = "universidad.txt";
 	
 	public static void main(String[] args) {
 		
